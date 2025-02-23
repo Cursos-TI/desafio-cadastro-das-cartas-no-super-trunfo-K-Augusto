@@ -18,6 +18,7 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
+    //Variáveis declaradas
     char EstadoAlagoas ='A', EstadoAmazonas ='B';
     char CodigoCarta1[4] = "A01";
     char CodigoCarta2[4] = "B02";
@@ -27,6 +28,7 @@ int main() {
     float PibMaceio = 2748401631, PibManaus = 103281436041;
     int PontTuristMaceio = 30, PontTuristManaus = 12;
 
+    //Impressão da 1ª carta registrada
     printf("\nA carta 1 possui os atributos.:\n");
     printf("\nEstado: %c\n",EstadoAlagoas);
     printf("Código do Estado: %s\n",CodigoCarta1);
@@ -36,6 +38,7 @@ int main() {
     printf("PIB: %.2f milhões de reais\n",PibMaceio);
     printf("Número de pontos turísticos: %d\n",PontTuristMaceio);
 
+    //Impressão da 2ª carta registrada
     printf("\nA carta 2 possui os atributos.:\n");
     printf("\nEstado: %c\n",EstadoAmazonas);
     printf("Código do Estado: %s\n",CodigoCarta2);
