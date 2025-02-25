@@ -44,7 +44,7 @@ int main() {
 
     //Impressão da 1ª carta registrada
     printf("\nA carta 1 possui os atributos.:\n");
-    printf("\nEstado: %c\n",EstadoAlagoas='A');
+    printf("\nEstado: %c\n",EstadoAlagoas);
     printf("Código do Estado: %s\n",CodigoCarta1);
     printf("Nome da cidade: %s\n",NomeCidade1);
     printf("População: %d\n",PopulacaoMaceio);
@@ -63,7 +63,7 @@ int main() {
     printf("Digite o tamanho do território:");
     scanf("%f",&AreaemKmManaus);
     printf("Digite o Pib da cidade: ");
-    scanf("%f",&PibMaceio);
+    scanf("%f",&PibManaus);
     printf("Digite a quntidade de pontos turísticos: ");
     scanf("%d",&PontTuristManaus);
 
