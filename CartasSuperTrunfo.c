@@ -28,7 +28,7 @@ int main() {
     int PontTuristMaceio = 30, PontTuristManaus = 12;
     
     //Instruções para o usuário preencher as informações
-    printf("Atenção usuário, utilize letra maiúscula e ponto como separador de dezenas!!!\n");
+    printf("Atenção usuário, utilize letra maiúscula, sem acento e ponto como separador de dezenas!!!\n");
 
     //Solicitação 1º jogador para digitar as informações da 1ª carta
     printf("\nJogador número 1, digite as informações da sua carta:\n");//Inicio com \n para não imprimir colado com a frase anterior
@@ -98,7 +98,7 @@ int main() {
     printf("Digite o Pib da cidade: ");
     scanf("%f",&PibManaus);
     
-     //Solicitação do número de pontos turísticos de Manaus
+    //Solicitação do número de pontos turísticos de Manaus
     printf("Digite a quantidade de pontos turísticos: ");
     scanf("%d",&PontTuristManaus);
 
