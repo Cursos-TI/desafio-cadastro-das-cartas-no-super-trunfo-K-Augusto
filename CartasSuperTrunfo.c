@@ -18,32 +18,46 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-    //Variáveis declaradas
+    //Variáveis declaradas de cada carta registrada - Total de duas cartas
     char EstadoAlagoas = 'A',EstadoAmazonas ='B';
     char CodigoCarta1[4] = "A01", CodigoCarta2[4] = "B02";
     char NomeCidade1[50] = "MACEIO", NomeCidade2[50] = "MANAUS";
     int PopulacaoMaceio = 957916, PopulacaoManaus = 2279686;
     float AreaemKmMaceio = 509320.00, AreaemKmManaus = 11401.092;
-    float PibMaceio = 27484016.31, PibManaus = 103281436.041;
+    float PibMaceio = 27484016.31, PibManaus = 103281436.041;//Pib declarado em reais
     int PontTuristMaceio = 30, PontTuristManaus = 12;
     
-    //Instruções ao usuário
+    //Instruções para o usuário preencher as informações
     printf("Atenção usuário, utilize letra maiúscula e ponto como separador de dezenas!!!\n");
 
-    //Solicitando ao 1º jogador para digitar as informações da carta 1
-    printf("\nJogador número 1, digite as informações da carta 1:\n");
+    //Solicitação 1º jogador para digitar as informações da 1ª carta
+    printf("\nJogador número 1, digite as informações da sua carta:\n");//Inicio com \n para não imprimir colado com a frase anterior
+
+    //Solicitação para digitar a letra que representa o Estado 1 (Alagoas) 
     printf("\nDigite a letra que representa o Estado: ");
-    scanf(" %c",&EstadoAlagoas);
+    scanf(" %c",&EstadoAlagoas); //Espaço antes do especificador de formato para tirar erro de leitura
+
+    //Solicitação do código da carta 1
     printf("Digite o código da carta: ");
     scanf("%s",CodigoCarta1);
+
+    //Solicitação do nome da cidade 1 - Maceio
     printf("Digite nome da cidade: ");
     scanf("%s",NomeCidade1);
+
+    //Solicitação do tamanho da população de Maceio
     printf("Digite o tamanho da população: ");
     scanf("%d",&PopulacaoMaceio);
-    printf("Digite o o tamanho do território: ");
+
+    //Solicitação da Área em km² de Maceio
+    printf("Digite o tamanho do território: ");
     scanf("%f",&AreaemKmMaceio);
+
+    //Solicitação do Pib da cidade de Maceio
     printf("Digite o Pib da cidade: ");
     scanf("%f",&PibMaceio);
+
+    //Solicitação do número de pontos turísticos de Maceio
     printf("Digite a quantidade de pontos turísticos: ");
     scanf("%d",&PontTuristMaceio);
 
@@ -57,20 +71,34 @@ int main() {
     printf("PIB: %.2f milhões de reais\n",PibMaceio/1000000);//Transformando reais para milhões de reais
     printf("Número de pontos turísticos: %d\n",PontTuristMaceio);
 
-    //Solicitando ao 2º jogador para digitar as informações da carta 2
-    printf("\nJogador número 2, digite as informações da carta 2:\n");
+    //Solicitando ao 2º jogador para digitar as informações da 2ª carta 
+    printf("\nJogador número 2, digite as informações da sua carta:\n");//Inicio com \n para não imprimir colado com a frase anterior
+    
+    //Solicitação para digitar a letra que representa o Estado 1 (Amazonas) 
     printf("\nDigite a letra que representa o Estado: ");
-    scanf(" %c",&EstadoAmazonas);
+    scanf(" %c",&EstadoAmazonas);//Espaço antes do especificador de formato para tirar erro de leitura
+    
+    //Solicitação do código da carta 2
     printf("Digite o código da carta: ");
     scanf("%s",CodigoCarta2);
+    
+    //Solicitação do nome da cidade 2 - Manaus
     printf("Digite nome da cidade: ");
     scanf("%s",NomeCidade2);
+    
+    //Solicitação do tamanho da população de Manaus
     printf("Digite o tamanho da população: ");
     scanf("%d",&PopulacaoManaus);
+    
+    //Solicitação da Área em km² de Manaus
     printf("Digite o tamanho do território: ");
     scanf("%f",&AreaemKmManaus);
+    
+    //Solicitação do Pib da cidade de Manaus
     printf("Digite o Pib da cidade: ");
     scanf("%f",&PibManaus);
+    
+     //Solicitação do número de pontos turísticos de Manaus
     printf("Digite a quantidade de pontos turísticos: ");
     scanf("%d",&PontTuristManaus);
 
