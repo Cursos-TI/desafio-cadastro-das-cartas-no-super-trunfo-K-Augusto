@@ -26,7 +26,23 @@ int main() {
     float AreaemKmMaceio = 509320.00, AreaemKmManaus = 11401.092;
     float PibMaceio = 27484016.31, PibManaus = 103281436.041;//Pib declarado em reais
     int PontTuristMaceio = 30, PontTuristManaus = 12;
+
+    //Inserção das variáveis que armazenarão a densidade demográfica e Pib per capita de Maceio e Manaus
+    float DensDemogrMaceio;
+    float DensDemogrManaus;
+    float PibPerCapMaceio;
+    float PibPerCapMManaus;
+
+    //Cálculo densidade demográfica e Pib per capita Maceio
+
+    DensDemogrMaceio = (float)PopulacaoMaceio/ AreaemKmMaceio; //Conversão explicita para igualar o tipo dos números da divisão
+    PibPerCapMaceio = PibMaceio / PopulacaoMaceio; 
+
+    //Cálculo densidade demográfica e Pib per capita Manaus
     
+    DensDemogrManaus = (float)PopulacaoManaus / AreaemKmManaus; //Conversão explicita para igualar o tipo dos números da divisão
+    PibPerCapMManaus = PibManaus / PopulacaoManaus; 
+
     //Instruções para o usuário preencher as informações
     printf("Atenção usuário, utilize letra maiúscula, sem acento e ponto como separador de dezenas!!!\n");
 
@@ -70,6 +86,8 @@ int main() {
     printf("Área: %.2f Km²\n",AreaemKmMaceio);
     printf("PIB: %.2f milhões de reais\n",PibMaceio/1000000);//Transformando reais para milhões de reais
     printf("Número de pontos turísticos: %d\n",PontTuristMaceio);
+    printf("Densidade Populacional: %.2f hab/km²\n",DensDemogrMaceio);
+    printf("Pib per capita: %.2f reais\n",PibPerCapMaceio);
 
     //Solicitando ao 2º jogador para digitar as informações da 2ª carta 
     printf("\nJogador número 2, digite as informações da sua carta:\n");//Inicio com \n para não imprimir colado com a frase anterior
@@ -111,6 +129,8 @@ int main() {
     printf("Área: %.2f Km²\n",AreaemKmManaus);
     printf("PIB: %.2f milhões de reais\n",PibManaus/1000000);//Transformando reais para milhões de reais
     printf("Número de pontos turísticos: %d\n",PontTuristManaus);
+    printf("Densidade Populacional: %.2f hab/km²\n",DensDemogrManaus);
+    printf("Pib per capita: %.2f reais\n",PibPerCapMManaus);
 
     return 0;
 }
