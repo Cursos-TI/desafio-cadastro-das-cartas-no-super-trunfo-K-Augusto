@@ -22,26 +22,54 @@ int main() {
     char EstadoAlagoas = 'A',EstadoAmazonas ='B';
     char CodigoCarta1[4] = "A01", CodigoCarta2[4] = "B02";
     char NomeCidade1[50] = "MACEIO", NomeCidade2[50] = "MANAUS";
-    int PopulacaoMaceio = 957916, PopulacaoManaus = 2279686;
+    unsigned long int PopulacaoMaceio = 957916, PopulacaoManaus = 2279686;
     float AreaemKmMaceio = 509320.00, AreaemKmManaus = 11401.092;
     float PibMaceio = 27484016.31, PibManaus = 103281436.041;//Pib declarado em reais
     int PontTuristMaceio = 30, PontTuristManaus = 12;
-
-    //Inserção das variáveis que armazenarão a densidade demográfica e Pib per capita de Maceio e Manaus
-    float DensDemogrMaceio;
-    float DensDemogrManaus;
+    
+    //Declaração das variáveis que armazenarão a densidade populacional e Pib per capita de Maceio e Manaus
+    float DensPopMaceio;
+    float DensPopManaus;
     float PibPerCapMaceio;
     float PibPerCapMManaus;
 
-    //Cálculo densidade demográfica e Pib per capita Maceio
+    //Declaração variáveis densidade populacional invertida Maceio e Manaus
+    float DensPopInvMaceio; 
+    float DensPopInvManaus;  
 
-    DensDemogrMaceio = (float)PopulacaoMaceio/ AreaemKmMaceio; //Conversão explicita para igualar o tipo dos números da divisão
+    //Declaração variáveis Super Poder Maceio e Manaus
+    float SuperPoderMaceio;
+    float SuperPoderManaus;
+
+    //Declaração de variáveis que receberão os resultados das comparações
+    int ResultPop, ResultArea, ResultPib, ResultPonTur, ResultDensPop, ResultPibPerCap, ResultSupPoder;
+
+    //Cálculo densidade demográfica e Pib per capita Maceio
+    DensPopMaceio = (float)PopulacaoMaceio/ AreaemKmMaceio; //Conversão explicita para igualar o tipo dos números da divisão
     PibPerCapMaceio = PibMaceio / PopulacaoMaceio; 
 
     //Cálculo densidade demográfica e Pib per capita Manaus
-    
-    DensDemogrManaus = (float)PopulacaoManaus / AreaemKmManaus; //Conversão explicita para igualar o tipo dos números da divisão
+    DensPopManaus = (float)PopulacaoManaus / AreaemKmManaus; //Conversão explicita para igualar o tipo dos números da divisão
     PibPerCapMManaus = PibManaus / PopulacaoManaus; 
+
+    //Cálculo densidade populacionalinvertida Maceio e Manaus
+    DensPopInvMaceio = (float)1/DensPopMaceio;
+    DensPopInvManaus = (float)1/DensPopManaus; 
+
+    //Cálculo do Super Poder Maceio 
+    SuperPoderMaceio = (float)PopulacaoMaceio + AreaemKmMaceio + PibMaceio + PibPerCapMaceio + DensPopInvMaceio + (float)PontTuristMaceio;
+
+    //Cálculo do Super Poder Manaus
+    SuperPoderManaus = (float)PopulacaoManaus + AreaemKmManaus + PibManaus + PibPerCapMManaus + DensPopInvManaus + (float)PontTuristManaus; 
+
+    //Comparação das cartas
+    ResultPop = PopulacaoMaceio > PopulacaoManaus;
+    ResultArea = AreaemKmMaceio > AreaemKmManaus;
+    ResultPib = PibMaceio > PibManaus;
+    ResultPonTur = PontTuristMaceio > PontTuristManaus;
+    ResultDensPop = DensPopInvMaceio < DensPopInvManaus;
+    ResultPibPerCap = PibPerCapMaceio > PibPerCapMManaus;
+    ResultSupPoder = SuperPoderMaceio > SuperPoderManaus;
 
     //Instruções para o usuário preencher as informações
     printf("Atenção usuário, utilize letra maiúscula, sem acento e ponto como separador de dezenas!!!\n");
@@ -63,7 +91,7 @@ int main() {
 
     //Solicitação do tamanho da população de Maceio
     printf("Digite o tamanho da população: ");
-    scanf("%d",&PopulacaoMaceio);
+    scanf("%lu",&PopulacaoMaceio);
 
     //Solicitação da Área em km² de Maceio
     printf("Digite o tamanho do território: ");
@@ -82,11 +110,11 @@ int main() {
     printf("\nEstado: %c\n",EstadoAlagoas);
     printf("Código do Estado: %s\n",CodigoCarta1);
     printf("Nome da cidade: %s\n",NomeCidade1);
-    printf("População: %d\n",PopulacaoMaceio);
+    printf("População: %lu\n",PopulacaoMaceio);
     printf("Área: %.2f Km²\n",AreaemKmMaceio);
     printf("PIB: %.2f milhões de reais\n",PibMaceio/1000000);//Transformando reais para milhões de reais
     printf("Número de pontos turísticos: %d\n",PontTuristMaceio);
-    printf("Densidade Populacional: %.2f hab/km²\n",DensDemogrMaceio);
+    printf("Densidade Populacional: %.2f hab/km²\n",DensPopMaceio);
     printf("Pib per capita: %.2f reais\n",PibPerCapMaceio);
 
     //Solicitando ao 2º jogador para digitar as informações da 2ª carta 
@@ -106,7 +134,7 @@ int main() {
     
     //Solicitação do tamanho da população de Manaus
     printf("Digite o tamanho da população: ");
-    scanf("%d",&PopulacaoManaus);
+    scanf("%lu",&PopulacaoManaus);
     
     //Solicitação da Área em km² de Manaus
     printf("Digite o tamanho do território: ");
@@ -125,12 +153,23 @@ int main() {
     printf("\nEstado: %c\n",EstadoAmazonas);
     printf("Código do Estado: %s\n",CodigoCarta2);
     printf("Nome da cidade: %s\n",NomeCidade2);
-    printf("População: %d\n",PopulacaoManaus);
+    printf("População: %lu\n",PopulacaoManaus);
     printf("Área: %.2f Km²\n",AreaemKmManaus);
     printf("PIB: %.2f milhões de reais\n",PibManaus/1000000);//Transformando reais para milhões de reais
     printf("Número de pontos turísticos: %d\n",PontTuristManaus);
-    printf("Densidade Populacional: %.2f hab/km²\n",DensDemogrManaus);
+    printf("Densidade Populacional: %.2f hab/km²\n",DensPopManaus);
     printf("Pib per capita: %.2f reais\n",PibPerCapMManaus);
 
+    //Impressão da comparação das cartas
+    printf("\nComparação das cartas:\n");
+    printf("\nPopulação: %d\n",ResultPop);
+    printf("Área: %d\n",ResultArea);
+    printf("PIB: %d\n",ResultPib);
+    printf("Pontos Turísticos: %d\n",ResultPonTur);
+    printf("Densidade Populacional: %d\n",ResultDensPop);
+    printf("PIB per Capita: %d\n",ResultPibPerCap);
+    printf("Super Poder: %d\n",ResultSupPoder);
+
     return 0;
+    
 }
